@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Issue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+    <style>
+
+        #app {
+            width: 400px;
+            margin: 0px auto;
+        }
+
+        .button {
+            padding: 24px;
+        }
+
+        .item {
+            border: 1px solid gray;
+            padding: 16px;
+            margin: 8px 0px;
+        }
+
+        .use-transition {
+            transition: all 500ms ease-in-out;
+            -o-transition: all 500ms ease-in-out;
+            -ms-transition: all 500ms ease-in-out;
+            -moz-transition: all 500ms ease-in-out;
+            -webkit-transition: all 500ms ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <button class="button" @click="toggleExpand"> Toggle Expand </button>
+        <div :class="className" style="overflow: hidden;" ref="container" @transitionend="handleTransitionEnd" :style="{ height: domHeight }">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
